@@ -1,21 +1,22 @@
 <div class="top-menu">
 
-    <img class="logo"
-         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+  <img class="logo"
+    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 
-</div>
+  </div>
 
-<div class="courses">
+  <div class="courses">
 
-    @for (course of courses;track $index){
-                
-        <course-card  
-            [course]="course" 
-            [index] = "$index"
-            (courseSelected)="onCourseSelected($event)"/>
+    @for (course of courses; track course; let i = $index; let isFirst = $first; let isLast = $last; let isEven = $even; let isOdd = $odd) {
+      <course-card
+        [class.is-first]="isFirst"
+        [class.is-last]="isLast"
+        [class.is-even]="isEven"
+        [class.is-odd]="isOdd"
+        [course]="course"
+        (courseSelected)="onCourseSelected($event)"
+        [cardIndex]="i+1"
+        />
     }
-    @empty {
-        <h1>No courses found!</h1>
-    }
 
-</div>
+  </div>
