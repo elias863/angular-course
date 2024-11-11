@@ -1,10 +1,11 @@
 import { Component,EventEmitter,input,Input,OnInit, Output } from '@angular/core';
 import { Course } from '../model/course';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'course-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css'
 })
@@ -29,5 +30,12 @@ export class CourseCardComponent implements OnInit{
 
   onCourseViewed(){
     this.courseEmitter.emit(this.course);
+  }
+
+  cardClasses(){
+    return{
+        'beginner':this.course.category == 'BEGINNER',
+        'course-card': true
+    }
   }
 }
