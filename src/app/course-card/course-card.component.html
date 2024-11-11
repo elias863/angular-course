@@ -2,7 +2,7 @@
    [ngClass]="cardClasses()">
 
     <div class="course-title"
-        [style.text-decoration]="'underline'"
+        [ngStyle]="{'text-decoration':'underline'}"
     >
         {{ cardIndex + ' '+ course.description}}
     </div>
