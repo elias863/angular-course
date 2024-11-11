@@ -33,9 +33,8 @@ export class CourseCardComponent implements OnInit{
   }
 
   cardClasses(){
-    return{
-        'beginner':this.course.category == 'BEGINNER',
-        'course-card': true
+    if(this.course.category == 'BEGINNER'){
+      return 'beginner';
     }
   }
 }
