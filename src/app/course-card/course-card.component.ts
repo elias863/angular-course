@@ -40,8 +40,7 @@ export class CourseCardComponent implements OnInit{
 
   cardStyles(){
     return{
-      'text-decoration': 'underline',
-      'background-color': 'red'
+      'background-image':'url('+this.course.iconUrl+')'
     };
   }
 }
