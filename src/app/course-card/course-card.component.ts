@@ -40,14 +40,9 @@ export class CourseCardComponent implements OnInit {
         console.log("courseService course card", this.courseService);
     }
 
-
     onSaveClicked(description:string) {
 
         this.courseEmitter.emit({...this.course, description});
 
     }
-
-
-
-
 }
